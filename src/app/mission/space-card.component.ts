@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-space-card',
-  templateUrl: './space-card.component.html',
-  styleUrls: ['./space-card.component.less']
+  templateUrl: 'space-card.component.html',
+  styleUrls: ['space-card.component.less']
 })
 export class SpaceCardComponent implements OnInit {
 

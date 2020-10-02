@@ -2,7 +2,8 @@
   <div><h1>SpaceX Launch Program</h1></div>
   <div class="body-wrapper__wrapper">
     <div class="body-wrapper_filter">
-      <app-space-filter></app-space-filter>
+      <app-space-filter (filterChange)="_onFilterChange($event)"
+      ></app-space-filter>
     </div>
     <div class="body-wrapper_space">
       <app-space-card class="body-wrapper_space-card"

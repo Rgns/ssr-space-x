@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {MissionService} from './mission.service';
+import {MissionService} from './service/mission.service';
 import {Mission} from './model/mission.model';
+import {Filter} from './model/filter.model';
 
 @Component({
   selector: 'app-mission',
-  templateUrl: './mission.component.html',
-  styleUrls: ['./mission.component.less']
+  templateUrl: 'mission.component.html',
+  styleUrls: ['mission.component.less']
 })
 export class MissionComponent implements OnInit {
 
@@ -15,10 +16,16 @@ export class MissionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.missionService.getSpaceMissions().subscribe((data: Mission[]) => {
-      console.log(data);
+    this.getMissions(new Filter());
+  }
+
+  _onFilterChange(filter: Filter): void {
+    this.getMissions(filter);
+  }
+
+  private getMissions(filter: Filter): void {
+    this.missionService.getSpaceMissions(filter).subscribe((data: Mission[]) => {
       this._mission = data;
     });
   }
-
 }

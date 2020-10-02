@@ -1,28 +1,43 @@
 <div class="space-filter__wrapper">
   <h3 class="space-filter__title">Filter</h3>
   <div class="space-filter__body-wrapper">
-    <input type="search" placeholder="Launch Year">
+    <input type="search" placeholder="Launch Year" maxlength="4" [(ngModel)]="_launchYear">
     <div class="space-filter__body-wrapper-wrap">
       <button
-        *ngFor="let year of _years">
+        *ngFor="let year of (_years | search:_launchYear)"
+        (click)="_onFilterChange(year,'launchYear')"
+        [class.__active]="year === filter.launchYear"
+      >
         <span class="space-filter__body-wrapper-inner-block-text">{{year}}</span>
       </button>
     </div>
   </div>
 
   <div class="space-filter__body-wrapper space-filter__body-wrapper-block">
-    <input type="search" placeholder="Successful Launch">
+    <input type="search" placeholder="Successful Launch" maxlength="4" [(ngModel)]="_launch">
     <div class="space-filter__body-wrapper-inner-block">
-      <button><span class="space-filter__body-wrapper-inner-block-text">True</span></button>
-      <button><span class="space-filter__body-wrapper-inner-block-text">False</span></button>
+      <button *ngFor="let val of _launchBooleanValue | search : _launch"
+              (click)="_onFilterChange(val,'launchSuccess')"
+              [class.__active]="val === filter.launchSuccess"
+      >
+        <span class="space-filter__body-wrapper-inner-block-text">
+          {{val}}
+        </span>
+      </button>
     </div>
   </div>
 
   <div class="space-filter__body-wrapper space-filter__body-wrapper-block">
-    <input type="search" placeholder="Successful Land">
+    <input type="search" placeholder="Successful Land" maxlength="4" [(ngModel)]="_land">
     <div class="space-filter__body-wrapper-inner-block">
-      <button><span class="space-filter__body-wrapper-inner-block-text">True</span></button>
-      <button><span class="space-filter__body-wrapper-inner-block-text">False</span></button>
+      <button *ngFor="let val of _landBooleanValue | search : _land"
+              (click)="_onFilterChange(val,'landSuccess')"
+              [class.__active]="val === filter.landSuccess"
+      >
+        <span class="space-filter__body-wrapper-inner-block-text">
+          {{val}}
+        </span>
+      </button>
     </div>
   </div>
 

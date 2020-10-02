@@ -19,6 +19,7 @@
     &-wrap {
       display: flex;
       flex-wrap: wrap;
+      min-height: 20rem;
     }
 
     &-block {
@@ -52,10 +53,9 @@ button {
     background-color: @button-background-color-hover;
   }
 
-  &:active {
+  &.__active{
     background-color: @button-background-color-hover;
   }
-
 }
 
 input[type="search"] {
