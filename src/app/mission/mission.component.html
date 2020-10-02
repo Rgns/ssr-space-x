@@ -1,11 +1,12 @@
-<div style="background-color: #f9f6f6;padding: 1rem">
+<div style="background-color: #e4e4e4;padding: 1rem">
   <div><h1>SpaceX Launch Program</h1></div>
   <div style="display: flex;justify-content: space-between">
-    <div style="width: 35%">
-      1
+    <div style="width: 20%">
+      <app-space-filter></app-space-filter>
     </div>
-    <div style="width: 60%">
-      2
+    <div style="width: 77%;display: flex;flex-wrap: wrap">
+      <app-space-card style="margin: 0 0.8rem 0.8rem 1rem "
+        *ngFor="let a of [1,2,3,4,5]"></app-space-card>
     </div>
   </div>
 

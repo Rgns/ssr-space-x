@@ -1,27 +1,29 @@
-<div>
-  <h3>Filter</h3>
-  <div>
-    <input type="search" placeholder="Launch Year"
-    >
-    <div>
+<div style="padding:20px;width: 17rem;background: #f9f6f6">
+  <h3 style="margin-left: 3rem">Filter</h3>
 
+  <div style="display: flex;flex-direction: column;align-items: center">
+    <input type="search" placeholder="Launch Year">
+    <div style="display: flex;flex-wrap: wrap;">
+      <button
+        *ngFor="let year of _years">
+        <span style="font-weight: 600">{{year}}</span>
+      </button>
     </div>
   </div>
 
-  <div style="display: flex;flex-direction: column; margin-top: 1rem;">
-    <input type="search"  placeholder="Successful Launch">
-    <div>
-    <button>True</button>
-    <button>False</button>
-
-
+  <div style="display: flex;flex-direction: column; margin-top: 1rem;align-items: center">
+    <input type="search" placeholder="Successful Launch">
+    <div style="display: flex;width: 100%;">
+      <button> <span style="font-weight: 600">True</span></button>
+      <button> <span style="font-weight: 600">False</span></button>
     </div>
   </div>
 
-  <div>
-    <input type="search"  placeholder="Successful Land">
-    <div>
-
+  <div style="display: flex;flex-direction: column;align-items: center;margin-top: 1rem;">
+    <input type="search" placeholder="Successful Land">
+    <div style="display: flex;width: 100%;">
+      <button> <span style="font-weight: 600">True</span></button>
+      <button> <span style="font-weight: 600">False</span></button>
     </div>
   </div>
 
