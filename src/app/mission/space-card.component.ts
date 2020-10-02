@@ -8,22 +8,25 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SpaceCardComponent implements OnInit {
 
   @Input()
-  missionName: string = "FalconSat";
+  missionName: string;
 
   @Input()
-  flightNumber: string = "14";
+  flightNumber: number;
 
   @Input()
-  missionIds: string[] = ["EE86F74", "EE86F74"];
+  missionIds: string[] = [];
 
   @Input()
-  launchYear: string = "2009";
+  launchYear: string;
 
   @Input()
-  SuccessfulLaunch = true;
+  SuccessfulLaunch: boolean;
 
   @Input()
-  SuccessfulLand = false;
+  SuccessfulLand: boolean;
+
+  @Input()
+  imgUrl: string;
 
   constructor() {
   }
