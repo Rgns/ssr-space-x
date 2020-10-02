@@ -2,8 +2,7 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MissionService} from './service/mission.service';
 import {Mission} from './model/mission.model';
 import {Filter} from './model/filter.model';
-import {ActivatedRoute, ParamMap, Params, Router} from '@angular/router';
-import {skip} from 'rxjs/operators';
+import {ActivatedRoute, ActivationEnd, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-mission',
@@ -13,6 +12,7 @@ import {skip} from 'rxjs/operators';
 export class MissionComponent implements OnInit {
 
   _mission: Mission[];
+  _filter: Filter;
 
   constructor(private missionService: MissionService,
               private activatedRoute: ActivatedRoute,
@@ -21,13 +21,15 @@ export class MissionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParamMap
-      .pipe(skip(1))
-      .subscribe((params: ParamMap) => {
-        const filter: Filter = this.updateFilter(params);
-        this.getMissions(filter);
-      });
+    this.router.events.subscribe((d) => {
+      if (d instanceof ActivationEnd) {
+        const params = this.activatedRoute.snapshot.queryParamMap;
+        this._filter = this.updateFilter(params);
+        this.getMissions(this._filter);
+      }
+    });
   }
+
 
   _onFilterChange(filter: Filter): void {
     this.updateRoute(filter);
@@ -46,12 +48,11 @@ export class MissionComponent implements OnInit {
 
   private getMissions(filter: Filter): void {
     this.missionService.getSpaceMissions(filter).subscribe((data: Mission[]) => {
-      this._mission = JSON.parse(JSON.stringify(data));
-      this.cdr.detectChanges();
+      this._mission = data;
     });
   }
 
-  private updateFilter(params: Params): Filter {
+  private updateFilter(params: ParamMap): Filter {
     const filter = new Filter();
     if (params.get('launchSuccess')) {
       filter.launchSuccess = params.get('launchSuccess');

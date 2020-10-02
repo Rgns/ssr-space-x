@@ -17,14 +17,15 @@ export class SpaceFilterComponent implements OnInit {
   @Output()
   filterChange = new EventEmitter<Filter>();
 
+  @Input()
+  filter: Filter;
+
   _years: string[] = [];
   _launchBooleanValue: string[] = ['true', 'false'];
   _landBooleanValue: string[] = ['true', 'false'];
   _launchYear: string;
   _launch: string;
   _land: string;
-
-  private filter: Filter;
 
   constructor() {
   }
