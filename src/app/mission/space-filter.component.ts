@@ -18,8 +18,8 @@ export class SpaceFilterComponent implements OnInit {
   filterChange = new EventEmitter<Filter>();
 
   _years: string[] = [];
-  _launchBooleanValue: string[] = ['True', 'False'];
-  _landBooleanValue: string[] = ['True', 'False'];
+  _launchBooleanValue: string[] = ['true', 'false'];
+  _landBooleanValue: string[] = ['true', 'false'];
   _launchYear: string;
   _launch: string;
   _land: string;

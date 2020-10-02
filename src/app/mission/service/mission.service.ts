@@ -10,7 +10,7 @@ import {Filter} from '../model/filter.model';
 })
 export class MissionService {
 
-  private readonly getSpaceMissionUrl = 'https://api.spaceXdata.com/v3/launches';
+  public readonly getSpaceMissionUrl = 'https://api.spaceXdata.com/v3/launches';
 
   constructor(private http: HttpClient) {
 
