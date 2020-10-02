@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MissionService} from './mission.service';
 
 @Component({
   selector: 'app-mission',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private missionService: MissionService) {
+  }
 
   ngOnInit(): void {
+    this.missionService.getSpaceMissions().subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

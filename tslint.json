@@ -60,6 +60,7 @@
       true,
       "as-needed"
     ],
+    "no-string-literal": false,
     "semicolon": {
       "options": [
         "always"
