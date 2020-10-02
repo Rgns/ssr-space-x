@@ -1,18 +1,59 @@
+@import "../../assets/colors";
+
+.space-filter {
+  &__wrapper {
+    padding: 20px;
+    width: 17rem;
+    background: @backgroud-color-white;
+  }
+
+  &__title {
+    margin-left: 3rem
+  }
+
+  &__body-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-block {
+      margin-top: 1rem
+    }
+
+    &-inner-block {
+      display: flex;
+      width: 100%;
+
+      &-text {
+        font-weight: 600;
+      }
+    }
+
+
+  }
+}
+
+
 button {
   width: 4rem;
   height: 1.7rem;
-  background-color: #92da92;
+  background-color: @button-background-color;
   border-radius: 5px;
   cursor: pointer;
   margin-left: 3rem;
   margin-top: 1rem;
 
   &:hover {
-    background-color: #239123;
+    background-color: @button-background-color-hover;
   }
 
   &:active {
-    background-color: #239123;
+    background-color: @button-background-color-hover;
   }
 
 }
@@ -20,9 +61,9 @@ button {
 input[type="search"] {
   width: 9rem;
   text-align: center;
-  border-color: transparent transparent grey transparent ;
+  border-color: @border-transparent-color @border-transparent-color @border-grey-color @border-transparent-color;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }

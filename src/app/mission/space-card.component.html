@@ -1,30 +1,29 @@
-<div style="padding: 20px;width: 14rem;background-color: #f9f6f6;">
-  <div style="display: flex;flex-direction: column">
+<div class="space-card">
+  <div class="space-card__wrapper">
     <div>
-      <img style="background-color: #e4e4e4;;width: 14rem"
-        src="https://images2.imgbox.com/a0/cb/s1h2RuR0_o.png">
+      <img class="space-card__wrapper-image"
+           src="https://images2.imgbox.com/a0/cb/s1h2RuR0_o.png">
     </div>
-    <div style="display: flex;flex-direction: column">
-      <div style="font-weight: bolder;margin-top: 1rem
-">
-        <span style="color: cornflowerblue">{{missionName}} # {{flightNumber}}</span>
+    <div class="space-card__wrapper">
+      <div class="space-card__wrapper-text">
+        <span class="space-card__wrapper-text-color">{{missionName}} # {{flightNumber}}</span>
       </div>
-      <div style="margin-top: 1rem;">
-        <span style="font-weight: bolder;">Mission Ids: </span>
+      <div class="space-card__wrapper-block">
+        <span class="space-card__wrapper-block-text">Mission Ids: </span>
         <ul *ngFor="let id of missionIds">
           <li>{{id}}</li>
         </ul>
       </div>
-      <div style="margin-top: 1rem">
-        <span style="font-weight: bolder;">Launch Year: </span>
+      <div class="space-card__wrapper-block">
+        <span class="space-card__wrapper-block-text">Launch Year: </span>
         <span>{{launchYear}}</span>
       </div>
-      <div style="margin-top: 1rem">
-        <span style="font-weight: bolder;">Successful Launch: </span>
+      <div class="space-card__wrapper-block">
+        <span class="space-card__wrapper-block-text">Successful Launch: </span>
         <span>{{SuccessfulLaunch}}</span>
       </div>
-      <div style="margin-top: 1rem">
-        <span style="font-weight: bolder;">Successful Landing: </span>
+      <div class="space-card__wrapper-block">
+        <span class="space-card__wrapper-block-text">Successful Landing: </span>
         <span>{{SuccessfulLand}}</span>
       </div>
     </div>

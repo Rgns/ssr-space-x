@@ -1,0 +1,42 @@
+@import "../../assets/colors";
+
+.body-wrapper {
+  background-color: @backgroud-color-off-white;
+  padding: 1rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_filter {
+    width: 20%
+  }
+
+  &_space {
+    width: 77%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-card {
+      margin: 0 0.8rem 0.8rem 1rem;
+    }
+  }
+
+  &_devBy {
+    display: flex;
+    justify-content: center;
+
+    &-text {
+      font-size: large;
+      font-weight: 600;
+    }
+
+    &-value {
+      font-size: large;
+      margin-left: 1rem;
+    }
+  }
+}
+
+

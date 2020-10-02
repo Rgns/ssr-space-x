@@ -1,29 +1,28 @@
-<div style="padding:20px;width: 17rem;background: #f9f6f6">
-  <h3 style="margin-left: 3rem">Filter</h3>
-
-  <div style="display: flex;flex-direction: column;align-items: center">
+<div class="space-filter__wrapper">
+  <h3 class="space-filter__title">Filter</h3>
+  <div class="space-filter__body-wrapper">
     <input type="search" placeholder="Launch Year">
-    <div style="display: flex;flex-wrap: wrap;">
+    <div class="space-filter__body-wrapper-wrap">
       <button
         *ngFor="let year of _years">
-        <span style="font-weight: 600">{{year}}</span>
+        <span class="space-filter__body-wrapper-inner-block-text">{{year}}</span>
       </button>
     </div>
   </div>
 
-  <div style="display: flex;flex-direction: column; margin-top: 1rem;align-items: center">
+  <div class="space-filter__body-wrapper space-filter__body-wrapper-block">
     <input type="search" placeholder="Successful Launch">
-    <div style="display: flex;width: 100%;">
-      <button> <span style="font-weight: 600">True</span></button>
-      <button> <span style="font-weight: 600">False</span></button>
+    <div class="space-filter__body-wrapper-inner-block">
+      <button><span class="space-filter__body-wrapper-inner-block-text">True</span></button>
+      <button><span class="space-filter__body-wrapper-inner-block-text">False</span></button>
     </div>
   </div>
 
-  <div style="display: flex;flex-direction: column;align-items: center;margin-top: 1rem;">
+  <div class="space-filter__body-wrapper space-filter__body-wrapper-block">
     <input type="search" placeholder="Successful Land">
-    <div style="display: flex;width: 100%;">
-      <button> <span style="font-weight: 600">True</span></button>
-      <button> <span style="font-weight: 600">False</span></button>
+    <div class="space-filter__body-wrapper-inner-block">
+      <button><span class="space-filter__body-wrapper-inner-block-text">True</span></button>
+      <button><span class="space-filter__body-wrapper-inner-block-text">False</span></button>
     </div>
   </div>
 

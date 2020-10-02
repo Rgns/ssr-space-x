@@ -1,17 +1,17 @@
-<div style="background-color: #e4e4e4;padding: 1rem">
+<div class="body-wrapper">
   <div><h1>SpaceX Launch Program</h1></div>
-  <div style="display: flex;justify-content: space-between">
-    <div style="width: 20%">
+  <div class="body-wrapper__wrapper">
+    <div class="body-wrapper_filter">
       <app-space-filter></app-space-filter>
     </div>
-    <div style="width: 77%;display: flex;flex-wrap: wrap">
-      <app-space-card style="margin: 0 0.8rem 0.8rem 1rem "
-        *ngFor="let a of [1,2,3,4,5]"></app-space-card>
+    <div class="body-wrapper_space">
+      <app-space-card class="body-wrapper_space-card"
+                      *ngFor="let a of [1,2,3,4,5]"
+      ></app-space-card>
     </div>
   </div>
-
-  <div style="display: flex;justify-content: center"><div style="font-size: large;font-weight: 600;">Developed by: </div><div style="font-size: large;margin-left: 1rem">Ritu Gupta</div></div>
-
-
-
+  <div class="body-wrapper_devBy">
+    <div class="body-wrapper_devBy-text">Developed by:</div>
+    <div class="body-wrapper_devBy-value">Ritu Gupta</div>
+  </div>
 </div>
