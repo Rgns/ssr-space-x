@@ -1,22 +1,24 @@
 <div class="body-wrapper">
   <div><h1>SpaceX Launch Program</h1></div>
   <div class="body-wrapper__wrapper">
-    <div class="body-wrapper_filter">
-      <app-space-filter (filterChange)="_onFilterChange($event)"
-                        [filter]="_filter"
-      ></app-space-filter>
+    <div class="body-wrapper_filter" style="background-color: #239123;">
+      <div style="width: 100%">
+        <app-space-filter (filterChange)="_onFilterChange($event)"
+                          [filter]="_filter"
+        ></app-space-filter>
+      </div>
     </div>
     <div class="body-wrapper_space">
-      <app-space-card class="body-wrapper_space-card"
-                      *ngFor="let mission of _mission"
-                      [missionName]="mission.missionName"
-                      [flightNumber]="mission.flightNumber"
-                      [missionIds]="mission.missionId"
-                      [launchYear]="mission.launchYear"
-                      [SuccessfulLaunch]="mission.launchSuccess"
-                      [SuccessfulLand]="mission.landSuccess"
-                      [imgUrl]="mission.imgUrl"
-      ></app-space-card>
+       <app-space-card class="body-wrapper_space-card"
+                       *ngFor="let mission of _mission"
+                       [missionName]="mission.missionName"
+                       [flightNumber]="mission.flightNumber"
+                       [missionIds]="mission.missionId"
+                       [launchYear]="mission.launchYear"
+                       [SuccessfulLaunch]="mission.launchSuccess"
+                       [SuccessfulLand]="mission.landSuccess"
+                       [imgUrl]="mission.imgUrl"
+       ></app-space-card>
     </div>
   </div>
   <div class="body-wrapper_devBy">
